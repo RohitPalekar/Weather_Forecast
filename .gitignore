@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Build output (like Vite or Webpack dist folders)
+dist/
+build/
+
+# Tailwind CSS cache
+.pnpm-debug.log*
+.yarn-debug.log*
+.yarn-error.log*
+npm-debug.log*
+
+# Environment variables
+.env
+.env.*
+
+# VS Code settings (optional)
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
