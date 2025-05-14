@@ -1,0 +1,85 @@
+Command :  npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+
+
+<!------------------------------------------------------- WEATHER DASHBOARD PROJECT ------------------------------------------------------->
+
+<!---------------------------------------------------------- Html & Tailwind css ----------------------------------------------------------->
+
+| Head Section :
+             1. Set up basic HTML5 document structure with proper meta tags.
+             2. Added a custom favicon. 
+             3. Linked Tailwind CSS for styling.
+             4. Imported Google Fonts.
+
+| Body Section :
+             1. Heading added (in centre).
+             2. Semantic section tag created.
+             3. In section tag search box and search button added.
+             4. Also current location button added.
+             5. Hover effect added to buttons
+             6. Error box added to Handle error and set its visibility with help of JavaScript.
+             7. Another section added for current weather.
+             8. In that card was created for current weather with fields like (images,City name,Temperature,Wind,Humidity).
+             9. cards are style as it look transparent.
+             10. Added images which are fetched with OpenWeatherMap Api.
+             11. Another section added for 5 days weather forecast.
+             12. Created five cards for 5 days weather forecast with fields like (Date,images,Temperature,Wind,Humidity).
+             13. images which are fetched with OpenWeatherMap Api.
+             14. JavaScript linked.
+   
+| Responsive Behavior :
+                    1. Single column layout on mobile
+                    2. Multi-column for forecasts on larger screens
+
+<!-------------------------------------------------------------- JavaScript ---------------------------------------------------------------->
+
+| API Integration :
+                1. Used OpenWeatherMap API with my personal key.
+                2. Added Url.
+                3. Added Icons path to fetch icons.
+
+| DOM Elements :
+             1. Captured all needed DOM elements.
+
+| Event Setup :
+            1. Added listeners for search button, location button, and enter key.
+            2. Set up input events to show search history dropdown.
+            3. Added listener to hide dropdown when clicking elsewhere
+
+| lookupCity() :
+             1. Handles the search button action.
+             2. Validates input before making API request.
+
+| fetchWeatherData(city) :
+                       1. Makes API requests for current weather.
+                       2. Uses coordinates from first call to get forecast data.
+                       3. Handles errors with try/catch.
+                       4. Adds successful searches to history.
+
+| fetchMyLocation() :
+                  1. Uses browser geolocation API to get coordinates.
+                  2. Makes weather requests based on current position.
+                  3. Handles permission denials and unsupported browsers.
+
+| displayCurrentWeather(data) :
+                            1. Display received data
+                            2. Updates DOM with current weather details.
+                            3. Sets weather icon appropriate to conditions.
+
+| displayForecast(data) :
+                      1. Processes the forecast data to get one reading per day (at noon).
+                      2. Creates forecast cards dynamically.
+
+| addToHistory() :
+               1. Saves searches to localStorage.
+
+| getStoredHistory() :
+                   1. To get past searches.
+
+| showHistory() :
+              1. Filters and displays matching history items.
+
+| showAlert() :
+              1. Displays error messages when neededs.
+              2. Also hides errors after a delay.
+
