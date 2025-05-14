@@ -1,11 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather Dashboard</title>
+        <!-----------------------------------  Favicon  ----------------------------------->
+        <link rel="icon" href="img/reshot-icon-weather-VAUPX2QFJK.svg" type="image/png" />
+        <!----------------------------------- Tailwind CSS Included  ----------------------------------->
+        <link href="output.css" rel="stylesheet" />
+        <!----------------------------------- Google Fonts ----------------------------------->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Rampart+One&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-[#339665]">
+        <div class="max-w-5xl mx-auto p-6">
+            <!------------------------------------------------------- Start ------------------------------------------------------->
+            <!---------------------------------------------------- Heading Section ----------------------------------------------------->
+            <header class="text-center mb-8">
+                <h1 class="text-5xl text-white font-extrabold lato-black">
+                    ☼ WEATHER DASHBOARD
+                </h1>
+            </header>
+
+            <!---------------------------------------------------- Search ----------------------------------------------------->
+            <section class="flex flex-wrap justify-center gap-3 mb-10">
+                <div class="relative w-64">
+                    <input
+                        type="text"
+                        id="city"
+                        placeholder="Search City..."
+                        class="px-4 py-2 border text-white border-[#e0f2e9] focus:ring-[#e0f2e9] rounded-md shadow-sm focus:outline-none focus:ring-2 w-full bg-transparent" />
+                    <div id="search_list" class="absolute w-full bg-white/20 backdrop-blur-md rounded-md mt-1 shadow-lg z-10 hidden max-h-60 overflow-y-auto"></div>
+                </div>
+                <button
+                    id="search_button"
+                    class="bg-white text-[#339665] hover:bg-[#267c50] hover:text-white px-4 py-2 rounded-md">
+                    Search
+                </button>
+                <!---------------------------------------------------- Current Location ----------------------------------------------------->
+                <button
+                    id="location_button"
+                    class="bg-[#e0f2e9] text-[#27694e] hover:bg-[#267c50] hover:text-white px-4 py-2 rounded-md">
+                    Use Current Location
+                </button>
+            </section>
+
+            <!---------------------------------------------------- Error Message ----------------------------------------------------->
+            <div id="error_msg" class="hidden bg-red-500/80 text-white p-4 rounded-lg mb-6 text-center">
+                <p id="errorMessage"></p>
+            </div>
+
+            <!---------------------------------------------------- Current Weather ----------------------------------------------------->
+            <section
+                id="currentWeather"
+                class="bg-white/10 backdrop-blur-md text-white p-6 rounded-xl shadow-lg flex justify-between items-center mb-10">
+                <div>
+                    <h2 id="cityName" class="text-xl font-semibold">Enter a city to see weather</h2>
+                    <p id="temperature">🌡️ Temperature: --°C</p>
+                    <p id="wind">💨 Wind: -- M/S</p>
+                    <p id="humidity">💧 Humidity: --%</p>
+                </div>
+                <div class="text-center">
+                    <img
+                        id="weatherIcon"
+                        src="https://openweathermap.org/img/wn/03d.png"
+                        alt="Weather Icon"
+                        class="w-16 mx-auto mb-2" />
+                    <p id="weatherDescription">Weather</p>
+                </div>
+            </section>
+
+            <!---------------------------------------------------- 5 Days Forecast ----------------------------------------------------->
+            <section id="forecastSection">
+                <h3
+                    class="text-3xl marcellus-regular text-center text-[#e0f2e9] mb-6">
+                    5-Day Forecast
+                </h3>
+                <div
+                    id="forecast_page"
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+                    <!-- Dummy forecast cards until data is loaded -->
+                    <div class="bg-white/10 backdrop-blur-md text-white p-4 rounded-xl shadow text-center">
+                        <h4 class="font-semibold mb-2">YYYY-MM-DD</h4>
+                        <img
+                            src="https://openweathermap.org/img/wn/03d.png"
+                            alt="Weather Icon"
+                            class="mx-auto w-10 mb-2" />
+                        <p>Temp: --°C</p>
+                        <p>Wind: -- M/S</p>
+                        <p>Humidity: --%</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md text-white p-4 rounded-xl shadow text-center">
+                        <h4 class="font-semibold mb-2">YYYY-MM-DD</h4>
+                        <img
+                            src="https://openweathermap.org/img/wn/03d.png"
+                            alt="Weather Icon"
+                            class="mx-auto w-10 mb-2" />
+                        <p>Temp: --°C</p>
+                        <p>Wind: -- M/S</p>
+                        <p>Humidity: --%</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md text-white p-4 rounded-xl shadow text-center">
+                        <h4 class="font-semibold mb-2">YYYY-MM-DD</h4>
+                        <img
+                            src="https://openweathermap.org/img/wn/03d.png"
+                            alt="Weather Icon"
+                            class="mx-auto w-10 mb-2" />
+                        <p>Temp: --°C</p>
+                        <p>Wind: -- M/S</p>
+                        <p>Humidity: --%</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md text-white p-4 rounded-xl shadow text-center">
+                        <h4 class="font-semibold mb-2">YYYY-MM-DD</h4>
+                        <img
+                            src="https://openweathermap.org/img/wn/03d.png"
+                            alt="Weather Icon"
+                            class="mx-auto w-10 mb-2" />
+                        <p>Temp: --°C</p>
+                        <p>Wind: -- M/S</p>
+                        <p>Humidity: --%</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md text-white p-4 rounded-xl shadow text-center">
+                        <h4 class="font-semibold mb-2">YYYY-MM-DD</h4>
+                        <img
+                            src="https://openweathermap.org/img/wn/03d.png"
+                            alt="Weather Icon"
+                            class="mx-auto w-10 mb-2" />
+                        <p>Temp: --°C</p>
+                        <p>Wind: -- M/S</p>
+                        <p>Humidity: --%</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
 </html>
